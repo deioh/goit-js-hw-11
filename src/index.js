@@ -21,8 +21,7 @@ searchFormEl.addEventListener('submit', onSearchFormSubmit);
 
 async function onSearchFormSubmit(event) {
   event.preventDefault();
-  // const query = inputEl.value.trim();
-  const query = 'cats';
+  const query = inputEl.value.trim();
 
   if (!query) {
     Notify.failure('Please enter a search query');
@@ -74,16 +73,20 @@ function renderGallery(hits) {
         <img src="${webformatURL}" alt="${tags}" loading="lazy" />
         <div class="info">
           <p class="info-item">          
-            <b>"${likes}"</b>
+            <b>Likes</b>
+            ${likes}
           </p>
           <p class="info-item">
-            <b>${views}</b>
+            <b>Views</b>
+                ${views}
           </p>
           <p class="info-item">
-            <b>${comments}</b>
+            <b>Comments</b>
+            ${comments}
           </p>
           <p class="info-item">
-            <b>${downloads}</b>
+            <b>Downloads</b>
+            ${downloads}
           </p>
         </div>
       </div>
