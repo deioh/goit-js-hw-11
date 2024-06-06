@@ -21,7 +21,8 @@ searchFormEl.addEventListener('submit', onSearchFormSubmit);
 
 async function onSearchFormSubmit(event) {
   event.preventDefault();
-  const query = inputEl.value.trim();
+  // const query = inputEl.value.trim();
+  const query = 'cats';
 
   if (!query) {
     Notify.failure('Please enter a search query');
@@ -72,8 +73,8 @@ function renderGallery(hits) {
       <div class="photo-card">
         <img src="${webformatURL}" alt="${tags}" loading="lazy" />
         <div class="info">
-          <p class="info-item">
-            <b>"Likes : ${likes}"</b>
+          <p class="info-item">          
+            <b>"${likes}"</b>
           </p>
           <p class="info-item">
             <b>${views}</b>
@@ -139,5 +140,4 @@ function handleScroll() {
   }
 }
 
-searchFormEl.addEventListener('submit', onSearchFormSubmit);
 window.addEventListener('scroll', handleScroll);
